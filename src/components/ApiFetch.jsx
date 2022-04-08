@@ -4,7 +4,7 @@ import axios from 'axios'
 const ApiFetch = () => {
   const [posts, setPosts] = useState([])
   useEffect(() => {
-    axios.get('http://localhost:3000/posts')
+    axios.get('http://localhost:3001/posts')
     .then(res => {
       setPosts(res.data)
     })
@@ -13,7 +13,7 @@ const ApiFetch = () => {
   return (
     <div>
       {
-        posts.map(post => <li key={post.id}>{post.title}</li>)
+        posts.map(post => <li key={post.id}>{post.title}：{post.content}</li>)
       }
     </div>
   )
